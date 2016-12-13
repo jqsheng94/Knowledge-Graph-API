@@ -1,3 +1,4 @@
+# This script is to search name, word type and description of any term.
 import urllib.request
 import simplejson as json
 from urllib.request import urlopen
