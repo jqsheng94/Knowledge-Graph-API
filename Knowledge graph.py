@@ -1,21 +1,15 @@
-import re
 import urllib.request
 import simplejson as json
-from bs4 import BeautifulSoup
-from lxml import html
-import requests
-from os.path import basename
 from urllib.request import urlopen
 
 
 
-
+Key = 'PUT YOUR KEY HERE'
 important_terms = ['Minecraft', 'أم كلثوم']
 for i in important_terms:
     i = urllib.parse.quote(i)
     link = json.load(
-        urlopen(
-            "https://kgsearch.googleapis.com/v1/entities:search?query=" + i + "&key=AIzaSyCilPTC0yjLoKGLkCUp0C_ZJmJoAI3ygH4&limit=1&indent=True"))
+        urlopen("https://kgsearch.googleapis.com/v1/entities:search?query=" + i + "&key=" + Key + "&limit=1&indent=True"))
     Output = link['itemListElement']
     for element in Output:
         if '@type' in element['result']:
@@ -28,11 +22,13 @@ for i in important_terms:
             articleBody =''
         if 'name' in element['result']:
             name = element['result']['name']
-            print('===Name===')
+            print('===Name==================')
             print(name)
-            print('===desecription===')
+            print('===desecription==========')
             print(description)
-            print('===Article===')
+            print('===Article===============')
             print(articleBody)
+
+
 
 
