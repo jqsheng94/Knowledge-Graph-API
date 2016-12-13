@@ -1,4 +1,4 @@
-# This script is to search name, word type and description of any term.
+# This script is to search name, word type and description of any term.The knowledge graph search query is language independent. 
 import urllib.request
 import simplejson as json
 from urllib.request import urlopen
